@@ -24,13 +24,13 @@ export class Clock extends React.Component<Props, State> {
       this.setState({
         currentTime: getCurrentDate(),
       });
-
-      // eslint-disable-next-line no-console
-      console.info(this.state.currentTime);
     }, 1000);
   }
 
   componentDidUpdate(prevProps: Readonly<Props>) {
+    // eslint-disable-next-line no-console
+    console.info(this.state.currentTime);
+
     if (prevProps.clockName !== this.props.clockName) {
       // eslint-disable-next-line no-console
       console.debug(`Renamed from ${prevProps.clockName} to ${this.props.clockName}`);
